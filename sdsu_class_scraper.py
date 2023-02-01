@@ -1,5 +1,10 @@
 # sdsu_class_scraper - Run to get all classes at SDSU into pandas dataframe
 
+# Library imports
+from typing import List
+from selenium.webdriver.chrome.webdriver import WebDriver
+from selenium.webdriver.remote.webelement import WebElement
+
 # Class imports
 from classes.DriverInstance import DriverInstance
 
@@ -10,11 +15,7 @@ TERM_CSS_ID = "TERM_VAL_TBL_DESCR"
 
 def main():
     d: DriverInstance = DriverInstance(STARTING_PAGE_URL)
-    print(d.getDriver())
-    # # Find the term and print it
-    # element = WebDriverWait(driver, 10).until(
-    #     EC.presence_of_element_located((By.ID, "TERM_VAL_TBL_DE"))
-    # )
+    print(d.getTermOptions())
 
 
 if __name__ == "__main__":
