@@ -28,7 +28,6 @@ class DriverInstance:
         driver.get(url)
         return driver
 
-    # TODO: FIX THIS
     def isElementFoundAfterWait(self, css_selector_id: str, wait_time: int) -> bool:
         """
         Wait for an element to appear on the screen, return if it showed up
@@ -42,7 +41,7 @@ class DriverInstance:
                 EC.presence_of_element_located((By.CSS_SELECTOR, css_selector_id))
             )
             return True
-        finally:
+        except Exception as e:
             return False
 
     def getTermOptions(self) -> List[str]:
@@ -52,10 +51,10 @@ class DriverInstance:
         :return List of all possible terms
         """
 
-        # if not self.isElementFoundAfterWait(
-        #     "#win0divSSR_CSTRMCUR_GRD\$grid\$0 > table", 10
-        # ):
-        #     return [""]
+        if not self.isElementFoundAfterWait(
+            "#win0divSSR_CSTRMCUR_GRD\$grid\$0 > table", 10
+        ):
+            return [""]
 
         current_terms_table_element: WebElement = self.driver.find_elements(
             By.CLASS_NAME, "ps_grid-flex"

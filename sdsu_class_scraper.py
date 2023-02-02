@@ -2,15 +2,12 @@
 
 # Library imports
 from typing import List
-from selenium.webdriver.chrome.webdriver import WebDriver
-from selenium.webdriver.remote.webelement import WebElement
 
 # Class imports
 from classes.DriverInstance import DriverInstance
 
-# Define variables needed
+# Final, constant variables
 STARTING_PAGE_URL = "https://cmsweb.cms.sdsu.edu/psc/CSDPRD/EMPLOYEE/SA/c/SSR_STUDENT_FL.SSR_CLSRCH_MAIN_FL.GBL"
-TERM_CSS_ID = "TERM_VAL_TBL_DESCR"
 
 
 def main():
