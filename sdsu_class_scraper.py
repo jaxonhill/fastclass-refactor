@@ -15,7 +15,10 @@ def main():
     term_choice: str = input(f"{start_driver.getTermOptions()}\n")
     start_driver.clickChosenTerm(term_choice)
 
-    # TODO: Get all possible categories and store in an array
+    # Open the advanced tab and retrieve all possible categories
+    start_driver.openAdvancedPopUp()
+    categories: List[str] = start_driver.retrieveCategoryList()
+    print(categories)
 
 
 if __name__ == "__main__":
