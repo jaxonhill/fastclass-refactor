@@ -51,6 +51,7 @@ class DriverInstance:
         :return List of all possible terms
         """
 
+        # Return empty array if the table element is not found
         if not self.isElementFoundAfterWait(
             "#win0divSSR_CSTRMCUR_GRD\$grid\$0 > table", 10
         ):
