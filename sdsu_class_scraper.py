@@ -9,8 +9,12 @@ from classes.StartInstance import StartInstance
 
 
 def main():
+    # Create the start driver and select a term based on user choice
     start_driver: StartInstance = StartInstance()
-    print(start_driver.getTermOptions())
+    term_choice: str = input(f"{start_driver.getTermOptions()}\n")
+    start_driver.clickChosenTerm(term_choice)
+
+    #
 
 
 if __name__ == "__main__":
