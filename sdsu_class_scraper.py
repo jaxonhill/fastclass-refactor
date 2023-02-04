@@ -20,6 +20,21 @@ def main():
     categories: List[str] = start_driver.retrieveCategoryList()
     print(categories)
 
+    # Go to each category and grab all the links
+    for category in categories:
+        start_driver.navigateToCategoryPage(category)
+
+    # TODO: LCS has no classes, add error checking
+
+    # Wait for <ul> to show up that has all the classes
+
+    # Check that we aren't past the limit of classes (red text)
+
+    # If we are, then hit the buttons to make it so we have all the classes
+
+    # Then scrape all links of every li under the ul we found originally and store
+    # in a hashmap with extra information we might use later
+
 
 if __name__ == "__main__":
     main()
