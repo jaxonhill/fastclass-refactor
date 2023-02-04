@@ -63,8 +63,8 @@ class StartInstance(DriverInstance):
             )
         )[1:]
 
-    def navigateToCategoryPage(self, category_code: str) -> None:
+    def navigateToCategoryPage(self, category_code: str, extra_number_string: str = ""):
         # Insert the category's code into the URL
-        category_url: str = f"https://cmsweb.cms.sdsu.edu/psc/CSDPRD/EMPLOYEE/SA/c/SSR_STUDENT_FL.SSR_CLSRCH_ES_FL.GBL?Page=SSR_CLSRCH_ES_FL&SEARCH_GROUP=SSR_CLASS_SEARCH_LFF&SEARCH_TEXT=%&ES_INST=SDCMP&ES_STRM=2233&ES_ADV=Y&ES_SUB={category_code}&ES_CNBR=&ES_LNAME=&KeywordsOP=CT&SubjectOP=EQ&CatalogNbrOP=CT&LastNameOP=CT&GBLSRCH=PTSF_GBLSRCH_FLUID"
+        category_url: str = f"https://cmsweb.cms.sdsu.edu/psc/CSDPRD/EMPLOYEE/SA/c/SSR_STUDENT_FL.SSR_CLSRCH_ES_FL.GBL?Page=SSR_CLSRCH_ES_FL&SEARCH_GROUP=SSR_CLASS_SEARCH_LFF&SEARCH_TEXT=%&ES_INST=SDCMP&ES_STRM=2233&ES_ADV=Y&ES_SUB={category_code}&ES_CNBR=&ES_LNAME={extra_number_string}&KeywordsOP=CT&SubjectOP=EQ&CatalogNbrOP=CT&LastNameOP=CT&GBLSRCH=PTSF_GBLSRCH_FLUID"
         self.driver.get(category_url)
         time.sleep(0.3)
